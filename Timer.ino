@@ -1,21 +1,9 @@
 bool Timer(unsigned long sec) {
   unsigned long curTime = millis();
   if (curTime > sec) {
-    /*Serial.print("sec: ");
-    Serial.println(sec);
-    Serial.print("pre: ");
-    Serial.println(preTime);
-    Serial.print("cur: ");
-    Serial.println(curTime);*/
     preTime = curTime;
     return false;
   } else {
-    /*Serial.print("sec: ");
-    Serial.println(sec);
-    Serial.print("pre: ");
-    Serial.println(preTime);
-    Serial.print("cur: ");
-    Serial.println(curTime);*/
     return true;
   }
 }
@@ -52,9 +40,6 @@ bool timer(int secondint) {
     target = arduinoTimeValue + (secondint * 1000);
     return true;
   }
-
-
-
 }
 
 void TimeModeCD() {
