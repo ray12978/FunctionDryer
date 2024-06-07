@@ -46,9 +46,6 @@ void RelayOutput(byte pin1, byte pin2, bool SMode, bool BMode) { //Dryer1,Dryer2
 
 void setDryerState() {
   bool SwSta = digitalRead(MicroSw);
-  bool DrySta_1 = digitalRead(DryBtn_1);
-  bool DrySta_2 = digitalRead(DryBtn_2);
-  bool DrySta_3 = digitalRead(DryBtn_3);
   if (!getAllCtrlSta()) {
     if (digitalRead(DryBtn_1) && DryerTmp_1) {
       D1Flag = 1;
