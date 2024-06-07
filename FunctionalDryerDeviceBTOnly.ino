@@ -20,8 +20,6 @@ const byte FanRelay = 37;
 //Control Button
 const byte FogBtn = 53;
 const byte AllCtrlBtn = 52;
-//const byte FogBtn = 52;
-//const byte AllCtrlBtn = 53;
 const byte MicroSw = 39;
 
 //Dryer Button
