@@ -27,7 +27,6 @@ void setup() {
   MsTimer2::start( );
   initLed();
   wdt_enable(WDTO_8S);
-  //wdt_disable();
   Serial.println("Start");
   ShutdownAll(false, false);
 }
@@ -36,7 +35,6 @@ void loop() {
   wdt_reset();
   DisplayWVState(false);
   BTListener();
-  //noTone(BuzzPin);
   if (!isBTControl) { //藍芽沒有控制才做
     wdt_reset();
     FoggerBtn();
