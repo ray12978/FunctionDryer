@@ -2,23 +2,18 @@ void BTListener() {
   CmdSaver = "";
   while (BT.available()) {
     val = BT.read();
-    //while (mTimer(10));
     delay(20);
     ScanCmd(val);
-    //Serial.print("val:");
-    //Serial.println(val);
   }
 }
 
 void ScanCmd(char c) {
   if (c == '$' || c == '+') StrSav = true;
   if (StrSav) {
-    //while (mTimer(5));
     delay(5);
     CmdSaver += c;
     CmdSaver.trim();
   }
-  //Serial.println(CmdSaver);
   if (CmdSaver.length() > STR_LEN - 1 && CmdSaver.charAt(0) == '$') {
     CmdProcess(CmdSaver);
     CmdSaver = "";
@@ -45,11 +40,9 @@ bool CancelListen() {
   CmdSaver = "";
   while (BT.available()) {
     val = BT.read();
-    //while (mTimer(10));
     delay(10);
     if (val == '$') StrSav = true;
     if (StrSav) {
-      //while (mTimer(5));
       delay(5);
       CmdSaver += val;
       CmdSaver.trim();
