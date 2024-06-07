@@ -41,16 +41,12 @@ void CmdProcess(String Str) {
           TimeModeStartBeep();
           DryerControl(BTDryFlag_1, BTDryFlag_2, BTDryFlag_3);
           FoggerCtrl(FogOn);
-          while (Timer(time1)/*TimeModeSec != 0*/ && CancelListen() && getEmi() /*&& !getAllCtrlSta()*/) { // Timing mode
+          while (Timer(time1) && CancelListen() && getEmi()) { // Timing mode
             isTimeMode = true;
             isStaChg = true;
-
             wdt_reset();
-            //Serial.print("Count:");
-            //Serial.println(TimeModeSec);
           }
-
-
+          
           FogOn = false;
           isTimeMode = false;
           FoggerCtrl(FogOn);
@@ -62,13 +58,12 @@ void CmdProcess(String Str) {
           SendStartState();
           DryerControl(BTDryFlag_1, BTDryFlag_2, BTDryFlag_3);
           FoggerCtrl(FogOn);
-          while (CancelListen() && getEmi()/* && !getAllCtrlSta()*/) {
+          while (CancelListen() && getEmi()) {
             isTimeMode = true;
             isStaChg = true;
             wdt_reset();
           }
-
-          //bool isTempHigh = !getEmi();
+          
           FogOn = false;
           isTimeMode = false;
           FoggerCtrl(FogOn);
