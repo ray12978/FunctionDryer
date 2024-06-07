@@ -15,10 +15,8 @@ void FoggerCtrl(bool stap) {
   bool WaterAva = VerifyWaterVol();
   DisplayWVState(stap);
   if (stap && WaterAva) {
-    //Serial.println("Fogger Running");
     digitalWrite(FogRelay, LOW);
   } else if (!stap || !WaterAva) {
-    //Serial.println("Fogger Off");
     digitalWrite(FogRelay, HIGH);
   }
 }
