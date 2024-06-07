@@ -30,19 +30,13 @@ float getHumi() {
 }
 
 bool getEmi() {
-  //Serial.print("Temp: ");
- // Serial.println(getTemp());
   if (getTemp() >= 40) return false;
-
   else return true;
-  //return true;
 }
 
 bool VerifyWaterVol() {
   if (getWaterVol() >= 100) return true;
-
   else return false;
-  //return true;
 }
 
 int getWaterVol() {
